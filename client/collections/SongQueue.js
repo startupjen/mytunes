@@ -11,6 +11,8 @@ var SongQueue = Backbone.Collection.extend({
         this.playFirst();
       }
 
+      // this.trigger('change', this);
+
     });
     this.on('ended', function() {
       this.shift();
@@ -26,8 +28,8 @@ var SongQueue = Backbone.Collection.extend({
   dequeue: function() {
     this.shift();
   },
-  ended: function(){
-    this.trigger('ended',this);
+  ended: function() {
+    this.trigger('ended', this);
   },
   enqueue: function(song) {
     // this.add(song);
